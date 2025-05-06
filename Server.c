@@ -935,7 +935,7 @@ void validate_credentials(int socket_desc){
 	}
 }
 
-void main()
+int main()
 {
 	struct sockaddr_in serverad,clientad;
 	int sfd,nsd,clientLen, client_socket;
@@ -956,7 +956,7 @@ void main()
 	while(1)
 	{		
 		clientLen=sizeof(clientad);
-		client_socket=accept(sfd,(struct sockaddr *)&clientad,&clientLen);  //accepting connection
+		client_socket=accept(sfd,(struct sockaddr *)&clientad,(socklen_t *)&clientLen);  //accepting connection
 		printf("\n");
 		write(1,"Connected to client...\n",sizeof("Connected to client...\n"));
 		if(!fork()){

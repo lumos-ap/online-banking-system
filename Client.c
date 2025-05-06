@@ -10,7 +10,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #define PORT 5000
-void main()
+int main()
 {
 	struct sockaddr_in server;
 	int sfd,msgLength;
